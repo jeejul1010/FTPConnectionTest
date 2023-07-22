@@ -10,17 +10,16 @@ using Newtonsoft.Json;
 
 public class FTPTest : MonoBehaviour
 {
-    public string m_UserName = "jeejul1010";
-    public string m_Password = "E!qeL+5S";
+    private string m_UserName = "jeejul1010";
+    private string m_Password = "E!qeL+5S";
 
-    public string ftpServerAddress = "ftps://nas.uvrlab.org:2121";
+    private string ftpServerAddress = "ftps://nas.uvrlab.org:2121/home/AmuseumFTP/";
 
     public Dropdown dropdown;
     public Text nameText, livesText, healthText;
 
     void Awake()
     {
-        ftpServerAddress = "ftps://nas.uvrlab.org:2121";
         FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpServerAddress);
         request.Method = WebRequestMethods.Ftp.ListDirectory;  
 
